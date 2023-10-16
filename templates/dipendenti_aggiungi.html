@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aggiungi dipendenti</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body class="bg-dark">
+    <nav class="navbar shadow-lg bg-light bg-opacity-10" style="height: 100px" data-bs-theme="dark">
+        <a href="/" class="link-offset-3 link-underline-light">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1">Azienda senza nome</span>
+            </div>
+        </a>
+    </nav>
+
+    <form method="post" class="mx-5 mt-4 my-3">
+        <div class="row g-3 my-3 rounded shadow bg-light bg-opacity-10 text-white">
+            <div class="col">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" value="{{ request.form['nome'] }}" name="nome" class="form-control mb-3" placeholder="Inserisci il nome" aria-label="Nome">
+            </div>
+            <div class="col">
+                <label for="cognome" class="form-label">Cognome</label>
+                <input type="text" value="{{ request.form['cognome'] }}" name="cognome" class="form-control mb-3" placeholder="Inserisci il cognome"
+                    aria-label="Cognome">
+            </div>
+        </div>
+        <div class="row g-3 my-3 rounded shadow bg-light bg-opacity-10 text-white">
+            <div class="col">
+                <label for="telefono" class="form-label">Telefono</label>
+                <input type="text" value="{{ request.form['telefono'] }}" name="telefono" class="form-control mb-3" placeholder="Inserisci il numero di telefono"
+                    aria-label="Telefono">
+            </div>
+            <div class="col">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" value="{{ request.form['email'] }}" name="email" class="form-control mb-3" placeholder="Inserisci l'email" aria-label="email">
+            </div>
+        </div>
+        <div class="row g-3 my-3 rounded shadow bg-light bg-opacity-10 text-white">
+            <div class="col">
+                <label for="mansione" class="form-label">Mansione</label>
+                <select class="form-select mb-3"  value="{{ request.form['mansione'] }}" name="mansione" aria-label="Default select example">
+                    <option selected>Scegli la mansione</option>
+                    <option value="Contabilità">Contabilità</option>
+                    <option value="Magazzino">Magazzino</option>
+                    <option value="Marketing e design">Marketing e design</option>
+                    <option value="Programmazione">Programmazione</option>
+                    <option value="Ufficio impiegati">Ufficio impiegati</option>
+                  </select>
+            </div>
+            <div class="col">
+                <label for="stipendio" class="form-label">Stipendio (€)</label>
+                <input type="number" value="{{ request.form['stipendio'] }}" name="stipendio" class="form-control mb-3" placeholder="Inserisci lo stipendio" aria-label="stipendio">
+            </div>
+        </div>
+        <div class="d-grid row g-3 mb-4 mx-5 gap-2 fixed-bottom d-md-block">
+            <button class="btn btn-success" type="submit">Aggiungi</button>
+          </div>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
